@@ -1,6 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
 import { floatingButtonStyle } from '../styles/index.styles';
+
+
 interface FloatingButtonProps {
   onPress: () => void;
 }
@@ -14,7 +16,6 @@ export default function FloatingButton({ onPress }: FloatingButtonProps) {
         }}
         style={floatingButtonStyle.butterfly}
       />
-
     </TouchableOpacity>
   );
 }

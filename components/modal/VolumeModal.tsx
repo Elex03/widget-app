@@ -25,7 +25,6 @@ export default function VolumeModal({ visible, onClose }: VolumeModalProps) {
       <View style={StyleSheet.absoluteFill} />
     </TouchableWithoutFeedback>
 
-    {/* Zona del modal, no cierra al tocar */}
     <View style={volumeModalStyle.modal}>
       <View style={volumeModalStyle.volumeContainer}>
         <View style={volumeModalStyle.volumeBar}>
