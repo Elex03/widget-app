@@ -18,21 +18,14 @@ export const floatingButtonStyle = StyleSheet.create({
     elevation: 5,
     overflow: 'hidden',
   },
-  butterfly: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-  },
+  butterfly: { width: '100%', height: '100%', resizeMode: 'contain' },
 });
 
 
 export const volumeModalStyle = StyleSheet.create({
   overlay: {
-    
     flex: 1,
     backgroundColor: '#00000050',
-
-
   },
   modal: {
     width: 45,
@@ -41,7 +34,6 @@ export const volumeModalStyle = StyleSheet.create({
     borderRadius: 15,
     padding: 10,
     alignItems: 'center',
-
     position: 'absolute',
     bottom: '60%',
     right: 100,
@@ -52,7 +44,7 @@ export const volumeModalStyle = StyleSheet.create({
     alignItems: 'center',
   },
   volumeBar: {
-    width: 8,
+    width: 6,
     height: 150,
     borderRadius: 5,
     backgroundColor: '#ddd',
@@ -67,9 +59,9 @@ export const volumeModalStyle = StyleSheet.create({
   },
   knob: {
     position: 'absolute',
-    width: 15,
-    height: 15,
-    borderRadius: 12.5,
+    width: 12,
+    height: 12,
+    borderRadius: 6,
     backgroundColor: '#4fc3f7',
     top: 0,
   },

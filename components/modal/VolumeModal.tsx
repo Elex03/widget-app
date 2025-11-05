@@ -7,16 +7,17 @@ import {
   TouchableWithoutFeedback,
   View
 } from 'react-native';
-import { useVolunModal } from '../Hooks/useVolumenModal';
+import { useVolumenModal } from '../Hooks/useVolumenModal';
 import { volumeModalStyle } from '../styles/index.styles';
 
 interface VolumeModalProps {
   visible: boolean;
   onClose: () => void;
+  buttonPosition: {x: number, y:number}
 }
 
-export default function VolumeModal({ visible, onClose }: VolumeModalProps) {
-  const {panResponder, volume, pan} = useVolunModal()
+export default function VolumeModal({ visible, onClose, buttonPosition }: VolumeModalProps) {
+  const {panResponder, volume, pan, modalPosition} = useVolumenModal(buttonPosition)
   
   return (
   <Modal transparent visible={visible} animationType="fade">
@@ -25,7 +26,12 @@ export default function VolumeModal({ visible, onClose }: VolumeModalProps) {
       <View style={StyleSheet.absoluteFill} />
     </TouchableWithoutFeedback>
 
-    <View style={volumeModalStyle.modal}>
+    <View style={[{        
+        position: 'absolute',
+        zIndex: 10,
+        left: modalPosition.x,
+        top: modalPosition.y,},
+        volumeModalStyle.modal]}>
       <View style={volumeModalStyle.volumeContainer}>
         <View style={volumeModalStyle.volumeBar}>
           <View style={[volumeModalStyle.volumeFill, { height: `${volume * 100}%` }]} />
